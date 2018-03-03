@@ -1,0 +1,5 @@
+/root/Projects/networkingExample/connectionExample/bin/Debug/connectionExample.exe
+/root/Projects/networkingExample/connectionExample/bin/Debug/connectionExample.pdb
+/root/Projects/networkingExample/connectionExample/obj/x86/Debug/connectionExample.csproj.CoreCompileInputs.cache
+/root/Projects/networkingExample/connectionExample/obj/x86/Debug/connectionExample.exe
+/root/Projects/networkingExample/connectionExample/obj/x86/Debug/connectionExample.pdb
