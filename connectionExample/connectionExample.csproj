@@ -35,13 +35,16 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EndPoint.cs" />
-    <Compile Include="Server.cs" />
+    <Compile Include="Properties\Client.cs" />
+    <Compile Include="Properties\EndPoint.cs" />
+    <Compile Include="Properties\HLClient.cs" />
+    <Compile Include="Properties\HLServer.cs" />
+    <Compile Include="Properties\Server.cs" />
+    <Compile Include="Properties\ServerLibrary.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\library.cpp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <None Include="library.cpp" />
-  </ItemGroup>
 </Project>

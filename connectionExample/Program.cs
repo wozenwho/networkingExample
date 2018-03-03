@@ -12,6 +12,7 @@ namespace connectionExample
 		 * - EndPoint.cs and Server.cs are both in the same directory as this code
 		 * - The EndPoint struct is analogous to a sockaddr_in, which holds the destination for the server,
 		 * 		and the source for the client
+		 * - Currently using the low-level calls
 		 */
 
 		private static Int32 SOCKET_NODATA = 0;

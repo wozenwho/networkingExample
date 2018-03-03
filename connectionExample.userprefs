@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{819BFE8C-EC8A-415B-B652-332904830E9B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="connectionExample/Properties/HLServer.cs">
+    <Files>
+      <File FileName="connectionExample/Properties/HLServer.cs" Line="13" Column="90" />
+      <File FileName="connectionExample/Properties/EndPoint.cs" Line="4" Column="21" />
+      <File FileName="connectionExample/Properties/ServerLibrary.cs" Line="11" Column="5" />
+      <File FileName="connectionExample/Properties/Server.cs" Line="7" Column="42" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.ItemProperties.connectionExample PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
