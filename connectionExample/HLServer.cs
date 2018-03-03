@@ -1,24 +1,27 @@
 using System;
 using System.Threading;
 
-namespace connectionExample
+namespace Networking
 {
-	unsafe class MainClass
+	unsafe class HLServer
 	{
 		/* Notes:
 		 * Call order: Client/Server.cs -> ServerLibrary.cs -> library.cpp -> server.cpp
          * A simple echo server implemented using our networking library wrapper functions.
+         * 
+         * 
+         * POTENTIAL ISSUE WITH RECEIVE, ENDPOINT IS READ ONLY, CANNOT ASSIGN NEW VALUES.
          */
 		private static Int32 SOCKET_NODATA          = 0;
 		private static Int32 SOCKET_DATA_WAITING    = 1;
         private static ushort PORT_NO               = 9999;
         private static int MAX_BUFFER_SIZE          = 1200;
 
-        private Server server;
+        private static Server server;
 		private static IntPtr serverInstance;
 		private static bool running;
 
-        private thread recvThread;
+        private static Thread recvThread;
         
 
 		public static void Main (string[] args)
@@ -27,7 +30,7 @@ namespace connectionExample
             byte[] sendBuffer = new byte[MAX_BUFFER_SIZE];
 
             // Initializes an EndPoint in the client object, returns 0 on success, -1 on fail. 
-            Int32 result = server.Init(destIP, PORT_NO);
+            Int32 result = server.Init(PORT_NO);
             if (result != 0)
             {
                 Console.WriteLine("Failed to initialize socket.");
@@ -41,11 +44,11 @@ namespace connectionExample
 
 		public static void recvThrdFunc()
 		{
-            Server server = new Server();
+            server = new Server();
             Int32 result = server.Init(PORT_NO);
             byte[] recvBuffer = new byte[MAX_BUFFER_SIZE];
             Int32 numRead;
-            EndPoint ep = new EndPoint(PORT_NO);
+            EndPoint ep = new EndPoint();
 
             while (running)
             {
@@ -60,7 +63,9 @@ namespace connectionExample
                     }
                     else
                     {
-                        Console.WriteLine("Read: " + recvBuffer);
+                        string contents = System.Text.Encoding.UTF8.GetString(recvBuffer);
+                        Console.WriteLine("Received: " + contents);
+                        Console.WriteLine("From EndPoint: " + ep.addr.Byte3 + "." + ep.addr.Byte2 + "." + ep.addr.Byte1 + "." + ep.addr.Byte0 + '\n');
                         // Console.WriteLine(ep.CAddr);
                         server.Send(ep, recvBuffer, MAX_BUFFER_SIZE);
                     }
