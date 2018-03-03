@@ -53,7 +53,7 @@ namespace connectionExample
                 // If poll returns 0 (SOCKET_NODATA), there is no data waiting to be read
                 if (server.Poll() == SOCKET_DATA_WAITING)
                 {
-                    numRead = client.Recv(&ep, recvBuffer, MAX_BUFFER_SIZE);
+                    numRead = server.Recv(&ep, recvBuffer, MAX_BUFFER_SIZE);
                     if (numRead <= 0)
                     {
                         Console.WriteLine("Failed to read from socket.");
