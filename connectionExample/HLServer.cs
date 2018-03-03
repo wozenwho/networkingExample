@@ -51,7 +51,7 @@ namespace connectionExample
             {
                 // If poll returns 1 (SOCKET_DATA_WAITING), there is data waiting to be read
                 // If poll returns 0 (SOCKET_NODATA), there is no data waiting to be read
-                if (client.Poll() == SOCKET_DATA_WAITING)
+                if (server.Poll() == SOCKET_DATA_WAITING)
                 {
                     numRead = client.Recv(&ep, recvBuffer, MAX_BUFFER_SIZE);
                     if (numRead <= 0)
