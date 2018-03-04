@@ -9,7 +9,7 @@ using Networking;
 /**
  * Simple echo server implementation using our Networking library.
  * This class is used as a Unity script which can be attached to a prefab for 
- * testing.
+ * testing. (I used Server)
  */
 public unsafe class unityEchoServer : MonoBehaviour
 {
