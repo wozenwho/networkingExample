@@ -44,8 +44,6 @@ namespace Networking
 
 		public static void recvThrdFunc()
 		{
-            server = new Server();
-            Int32 result = server.Init(PORT_NO);
             byte[] recvBuffer = new byte[MAX_BUFFER_SIZE];
             Int32 numRead;
             EndPoint ep = new EndPoint();
@@ -70,7 +68,6 @@ namespace Networking
                         server.Send(ep, recvBuffer, MAX_BUFFER_SIZE);
                     }
                 }
-
             }
 		} //End of recvThrdFunc
 	} // End of MainClass class

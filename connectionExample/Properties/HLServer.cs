@@ -8,7 +8,6 @@ namespace Networking
 		/* Notes:
 		 * Call order: Client/Server.cs -> ServerLibrary.cs -> library.cpp -> server.cpp
          * A simple echo server implemented using our networking library wrapper functions.
-         * 
          */
 		private static Int32 SOCKET_NODATA          = 0;
 		private static Int32 SOCKET_DATA_WAITING    = 1;

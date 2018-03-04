@@ -42,9 +42,14 @@
     <Compile Include="Properties\HLServer.cs" />
     <Compile Include="Properties\Server.cs" />
     <Compile Include="Properties\ServerLibrary.cs" />
+    <Compile Include="Properties\unityTest\unityClientTest.cs" />
+    <Compile Include="Properties\unityTest\unityEchoServerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\library.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\unityTest\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
