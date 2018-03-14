@@ -43,13 +43,19 @@
     <Compile Include="Properties\Server.cs" />
     <Compile Include="Properties\ServerLibrary.cs" />
     <Compile Include="Properties\unityTest\unityClientTest.cs" />
-    <Compile Include="Properties\unityTest\unityEchoServerTest.cs" />
+    <Compile Include="Properties\unityTest\unityEchoServer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="connectionExample.csproj" />
     <None Include="Properties\library.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\unityTest\" />
+    <None Include="bin\Debug\connectionExample.exe" />
+    <None Include="bin\Debug\connectionExample.pdb" />
+    <None Include="bin\Debug\libNetwork.so" />
+    <None Include="obj\x86\Debug\connectionExample.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\x86\Debug\connectionExample.csproj.FileListAbsolute.txt" />
+    <None Include="obj\x86\Debug\connectionExample.exe" />
+    <None Include="obj\x86\Debug\connectionExample.pdb" />
+    <None Include="Properties\unityTest\libNetwork.so" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

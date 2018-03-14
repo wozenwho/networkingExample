@@ -1,18 +1,16 @@
 ﻿<Properties StartupConfiguration="{819BFE8C-EC8A-415B-B652-332904830E9B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="connectionExample/Properties/unityEchoServerTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="connectionExample/Properties/unityTest/unityClientTest.cs">
     <Files>
-      <File FileName="connectionExample/Properties/EndPoint.cs" Line="4" Column="21" />
-      <File FileName="connectionExample/Properties/HLClient.cs" Line="42" Column="14" />
-      <File FileName="connectionExample/Properties/HLServer.cs" Line="62" Column="1" />
-      <File FileName="connectionExample/Properties/Client.cs" Line="1" Column="1" />
-      <File FileName="connectionExample/Properties/unityClientTest.cs" Line="142" Column="2" />
-      <File FileName="connectionExample/Properties/unityEchoServerTest.cs" Line="94" Column="2" />
+      <File FileName="connectionExample/Properties/unityTest/unityClientTest.cs" Line="44" Column="27" />
+      <File FileName="connectionExample/Properties/unityTest/unityEchoServer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.ItemProperties.connectionExample PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/root/Documents/networkingExample/connectionExample/Properties/unityTest/sleeplessInSE12-S.cs" relfile="connectionExample/Properties/unityTest/sleeplessInSE12-S.cs" line="27" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
