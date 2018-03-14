@@ -53,11 +53,16 @@ void TCPClient::closeConnection() {
 /**
 	Sends char array to all connected clients
 **/
-void TCPClient::sendBytes(char * data, uint32_t len)
+int32_t TCPClient::sendBytes(char * data, uint32_t len)
 {
-	if (send(clientSocket, data, len , 0 ) == -1) {
-		perror("client send error");
+ 	int32_t numSent = 0;
+
+	if ((numSent = send(clientSocket, data, len , 0 )) == -1) {
+		// perror("client send error");
+		std::cout << strerror(errno) << std::endl;
+		return numSent;
 	}
+	return numSent;
 }
 
 

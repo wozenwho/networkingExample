@@ -1,29 +1,53 @@
 #include "tcpclient.h"
-#define MAP_BUFFER_SIZE         4096
+#define MAP_BUFFER_SIZE         8192
 #define MAP_HEADER_SIZE         4
 
 // Receive test for map data
 int main() {
     TCPClient client;
 	int result;
-    int numRecv = 0;
-    char temp[] = "Hello\n";
 	char buffer[MAP_BUFFER_SIZE];
+    char writeBuffer[MAP_BUFFER_SIZE];
     char headerBuf[MAP_HEADER_SIZE];
-    int count  = 0;
+    int numSent  = 0;
+    int numRecv = 0;
+    int running = 1;
 
-	result = client.initializeSocket(9999, (char *)"142.232.18.92");
+	result = client.initializeSocket(9999, (char *)"192.168.0.13");
     if (result == -1)
         std::cout << strerror(errno) << std::endl;
+    else
+    {
+        std::cout << "Connection success." << std::endl;
+    }
 
-    client.receiveBytes(headerBuf, sizeof(headerBuf));
+    /*
+    Uncomment this segment of code to test a single send/recv, the while loop is useless.
+    */
+    // while (running)
+    // {
+    //     std::cin >> writeBuffer;
+    //     numSent = client.sendBytes(writeBuffer, MAP_BUFFER_SIZE);
+    //     if (numSent == 0)
+    //     {
+    //         std::cout << "Sent: " << numSent << " bytes." << std::endl;
+    //     }
+    //     numRecv = client.receiveBytes(buffer, sizeof(buffer));
+    //     std::cout << "Received: " << buffer << std::endl;
+    // }
 
+    numRecv = client.receiveBytes(buffer, sizeof(buffer));
+    if (numRecv == -1)
+    {
+        std::cout << strerror(errno) << std::endl;
+    }
+    else
+    {
+        std::cout << "Received: " << buffer << std::endl;
+    }
 
-	//while (true) {
-	numRecv = client.receiveBytes(buffer, sizeof(buffer));
-
-	if(numRecv == 0)
-		printf("%s\n", buffer);
+	// if(numRecv == 0)
+	// 	printf("%s\n", buffer);
 	//}
 	return 1;
 }
