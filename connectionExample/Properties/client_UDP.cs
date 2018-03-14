@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace Networking
 {
-	unsafe class HLClient
+	unsafe class client_UDP
 	{
 		/* Notes:
 		 * Call order: Client/Server.cs -> ServerLibrary.cs -> library.cpp -> server.cpp
@@ -27,7 +27,7 @@ namespace Networking
         
         // This class has Main by default. If you want to run the server example, un-main this
         //  and main the ServerWrapper NotMain function.
-		public static void Main (string[] args)
+		public static void notMain (string[] args)
 		{
             byte[] sendBuffer = new byte[MAX_BUFFER_SIZE];
 

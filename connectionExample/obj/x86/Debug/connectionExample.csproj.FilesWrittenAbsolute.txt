@@ -1,0 +1,7 @@
+/root/Documents/networkingExample/connectionExample/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/root/Documents/networkingExample/connectionExample/obj/x86/Debug/connectionExample.exe
+/root/Documents/networkingExample/connectionExample/obj/x86/Debug/connectionExample.pdb
+/root/Documents/networkingExample/connectionExample/bin/Debug/connectionExample.exe.mdb
+/root/Documents/networkingExample/connectionExample/bin/Debug/connectionExample.pdb
+/root/Documents/networkingExample/connectionExample/bin/Debug/connectionExample.exe
+/root/Documents/networkingExample/connectionExample/obj/x86/Debug/connectionExample.exe.mdb

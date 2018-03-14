@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace Networking
 {
-	unsafe class HLServer
+	unsafe class server_UDP
 	{
 		/* Notes:
 		 * Call order: Client/Server.cs -> ServerLibrary.cs -> library.cpp -> server.cpp

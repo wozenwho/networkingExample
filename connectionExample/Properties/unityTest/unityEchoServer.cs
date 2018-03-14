@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using UnityEngine;
+//using UnityEngine;
 using Networking;
 
 /**
@@ -12,7 +12,7 @@ using Networking;
  * 
  * Throughput seems to be limited by Client's Update rate, ~200 updates sent/received per second 
  */
-public unsafe class unityEchoServer : MonoBehaviour {
+public unsafe class unityEchoServer /*: MonoBehaviour*/ {
 
     private static int MAX_BUFFER_SIZE = 1200;
     public static int SOCKET_NODATA = 0;
@@ -29,7 +29,7 @@ public unsafe class unityEchoServer : MonoBehaviour {
 	 */ 
 	void Start ()
 	{
-        Debug.Log("Starting Server-Echo test");
+//        Debug.Log("Starting Server-Echo test");
 
 		// Creates a blank EndPoint which will be filled by the Server.Recv call.
         ep = new EndPoint();
@@ -41,7 +41,7 @@ public unsafe class unityEchoServer : MonoBehaviour {
         result = server.Init(portNo);
         if (result != 0)
         {
-            Debug.Log("Failed to initialize socket");
+//            Debug.Log("Failed to initialize socket");
         }
 
         recvThread = new Thread(recvThrdFunc);
@@ -54,7 +54,7 @@ public unsafe class unityEchoServer : MonoBehaviour {
 	//Terminate thread when we stop running.
     private void OnDisable()
     {
-        Debug.Log("DISABLED.");
+//        Debug.Log("DISABLED.");
         running = false;
     }
 
@@ -85,19 +85,19 @@ public unsafe class unityEchoServer : MonoBehaviour {
 			// If data is waiting at the socket
             if (result == SOCKET_DATA_WAITING)
             {
-                Debug.Log("Poll success.");
+//                Debug.Log("Poll success.");
 
                 fixed (EndPoint* ep_ptr = &ep)
                 {
                     numRecv = server.Recv(ep_ptr, recvBuffer, MAX_BUFFER_SIZE);
                     if (numRecv <= 0)
                     {
-                        Debug.Log("Received Nothing.");
+//                        Debug.Log("Received Nothing.");
                     }
                     else
                     {
                         numRecvPass++;
-                        Debug.Log("Received.");
+//                        Debug.Log("Received.");
 
 						/*Collapsable debug logs*/
                         //string contents = System.Text.Encoding.UTF8.GetString(recvBuffer);
@@ -108,7 +108,7 @@ public unsafe class unityEchoServer : MonoBehaviour {
                         numBytesSent = server.Send(ep, recvBuffer, MAX_BUFFER_SIZE);
                         if (numBytesSent != 0)
                         {
-                            Debug.Log("Sent.");
+//                            Debug.Log("Sent.");
                         }
 
                     }
@@ -120,7 +120,7 @@ public unsafe class unityEchoServer : MonoBehaviour {
                 numPollFail++;
                 if (numPollFail % 100 == 0)
                 {
-                    Debug.Log("Poll Fail.");
+//                    Debug.Log("Poll Fail.");
 
 					/*Collapsable debug logs*/ 
                     //Debug.Log("Num Poll Fails: " + numPollFail);

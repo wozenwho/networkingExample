@@ -38,12 +38,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Client.cs" />
     <Compile Include="Properties\EndPoint.cs" />
-    <Compile Include="Properties\HLClient.cs" />
-    <Compile Include="Properties\HLServer.cs" />
     <Compile Include="Properties\Server.cs" />
-    <Compile Include="Properties\ServerLibrary.cs" />
     <Compile Include="Properties\unityTest\unityClientTest.cs" />
     <Compile Include="Properties\unityTest\unityEchoServer.cs" />
+    <Compile Include="Properties\client_UDP.cs" />
+    <Compile Include="Properties\server_UDP.cs" />
+    <Compile Include="Properties\client_TCP.cs" />
+    <Compile Include="Properties\TCPServer.cs" />
+    <Compile Include="Properties\server_TCP_echo.cs" />
+    <Compile Include="Properties\server_TCP_transmit.cs" />
+    <Compile Include="Properties\TCPClient.cs" />
+    <Compile Include="Properties\ServerLibrary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="connectionExample.csproj" />

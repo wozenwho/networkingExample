@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using UnityEngine;
+//using UnityEngine;
 using Networking;
 
 
@@ -17,7 +17,7 @@ using Networking;
 *
 * It sends a 600B packet every time Update is called.
 */
-public class unityClientTest : MonoBehaviour {
+public class unityClientTest /* : MonoBehaviour */ {
 
 	public static int SOCKET_NODATA = 0;
 	public static int SOCKET_DATA_WAITING = 1;
@@ -33,7 +33,7 @@ public class unityClientTest : MonoBehaviour {
     * Start initializes the Client object and recvThread.
     */
 	void Start () {
-		Debug.Log ("Start Client-Send test");
+		//Debug.Log ("Start Client-Send test");
 		Int32 result;
 		byte[] sendBuffer = new Byte[MAX_BUFFER_SIZE];
 
@@ -41,7 +41,7 @@ public class unityClientTest : MonoBehaviour {
 
 		if (client == null)
 		{
-			client = new Client ();
+			client = new Client ();	
 			client.Init (destIP, portNo);
 		}
 
@@ -50,7 +50,7 @@ public class unityClientTest : MonoBehaviour {
 
 		if (result != 0)
 		{
-			Debug.Log ("Failed to initialize socket.");
+			//Debug.Log ("Failed to initialize socket.");
 		}
 
 		// Starts the recv thread (listens for the echo)
@@ -91,9 +91,9 @@ public class unityClientTest : MonoBehaviour {
 
 		if (numSent <= 0)
 		{
-			Debug.Log ("Send fail.");
+//			Debug.Log ("Send fail.");
 		}
-		Debug.Log ("Sent");
+//		Debug.Log ("Sent");
 		i++;
 
 	} // End of Update()
@@ -102,7 +102,7 @@ public class unityClientTest : MonoBehaviour {
 	// Terminate thread when we stop running.
 	private void OnDisable()
 	{
-		Debug.Log ("DISABLED");
+//		Debug.Log ("DISABLED");
 		running = false;
 	}
 
@@ -119,22 +119,22 @@ public class unityClientTest : MonoBehaviour {
 		int numPollPass = 0;
 		int numPollFail = 0;
 
-		Debug.Log ("recvThread started.");
+//		Debug.Log ("recvThread started.");
 
 		while (running)
 		{
 			if (client.Poll() == SOCKET_DATA_WAITING)
 			{
-				Debug.Log ("Poll success.");
+//				Debug.Log ("Poll success.");
 				numRead = client.Recv(recvBuffer, MAX_BUFFER_SIZE);
 				totalRead += (UInt64) numRead;
 				if (numRead <= 0)
 				{
-					Debug.Log ("Client Recv error");
+//					Debug.Log ("Client Recv error");
 				}
 				else
 				{
-					Debug.Log ("Received.");
+//					Debug.Log ("Received.");
 
 					// Collapsable debug logs
 //					string contents = System.Text.Encoding.UTF8.GetString (recvBuffer);
@@ -158,7 +158,7 @@ public class unityClientTest : MonoBehaviour {
 //					Debug.Log("Num Poll Fails: " + numPollFail);
 //					Debug.Log("Num Poll Success: " + numPollPass);
 //				}
-				Debug.Log("Poll Fail.");
+//				Debug.Log("Poll Fail.");
 				//System.Threading.Thread.Sleep (10);
 			}
 			//			if (i++ % 1000 == 0) {
