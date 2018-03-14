@@ -1,6 +1,6 @@
 #include "tcpclient.h"
-#define MAP_BUFFER_SIZE         4096;
-#define MAP_HEADER_SIZE         4;
+#define MAP_BUFFER_SIZE         4096
+#define MAP_HEADER_SIZE         4
 
 // Receive test for map data
 int main() {
@@ -8,7 +8,7 @@ int main() {
 	int result;
     int numRecv = 0;
     char temp[] = "Hello\n";
-	char buffer[MAX_BUFFER_SIZE];
+	char buffer[MAP_BUFFER_SIZE];
     char headerBuf[MAP_HEADER_SIZE];
     int count  = 0;
 
@@ -20,11 +20,10 @@ int main() {
 
 
 	//while (true) {
-		numRecv = client.receiveBytes(buffer, sizeof(buffer));
+	numRecv = client.receiveBytes(buffer, sizeof(buffer));
 
-		if(numRecv == 0)
-			printf("%s\n", rBuffer);
-		break;
+	if(numRecv == 0)
+		printf("%s\n", buffer);
 	//}
 	return 1;
 }
